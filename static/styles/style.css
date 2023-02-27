@@ -1,0 +1,132 @@
+html {
+    font-family: "nimbus-sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    height: 100%;
+    font-size: 1.1em;
+}
+
+body {
+    height: 100%;
+}
+
+main a {
+    /* text-decoration: none; */
+    font-family: "allumi-std", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 0.8em;
+    margin-top: 1em;
+    display: inline-flex;
+    justify-content: center;
+}
+
+header {
+    /* display: flex;
+    justify-content: center; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+header a {
+    /* display: flex; */
+    /* position: absolute;
+    left: 0; */
+    align-self: center;
+}
+
+header img {
+    width: 1em;
+}
+
+header p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+} */
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+label {
+    margin-top: 1.3em;
+    margin-bottom: 0.3em;
+}
+
+input {
+    /* background-color: rgb(242, 242, 242); */
+    height: 3em;
+    /* border: none; */
+    border: rgba(107, 107, 107, 0.322) solid;
+    border-radius: 5px;
+    box-shadow: none;
+    padding-left: 1em;
+    outline: none;
+    /* font-size: 1em; */
+    font-family: "allumi-std", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 0.9em;
+}
+
+form input:last-of-type {
+    margin-top: 1.5em;
+}
+
+input:focus {
+    background-color: rgba(239, 239, 239, 0.163);
+    border-bottom-width: 0.2em;
+}
+
+input::placeholder {}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+/* zero state */
+
+.zero_state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.8em;
+    height: 100%;
+}
+
+.zero_state a,
+form input:last-of-type {
+    display: block;
+    text-decoration: none;
+    /* border: black solid; */
+    background-color: rgb(255, 173, 42);
+    text-align: center;
+    width: 100%;
+    padding: 1em 0;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.zero_state a:nth-of-type(2) {
+    /* border: rgb(255, 173, 42) solid; */
+    background-color: transparent;
+    border: rgb(255, 173, 42) solid;
+    color: rgb(255, 173, 42);
+}
+
+/* slider */
+/* search */
+/* menu */
+/* formulier */

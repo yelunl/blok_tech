@@ -21,6 +21,10 @@ app.get('/account-pagina/:user', (req, res) => {
   res.send(`dit is een accountpagina ${req.params.user}`);
 })
 
+app.get('/error', (req, res) => {
+  res.send('<h1>Error 404</h1>');
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
