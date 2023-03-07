@@ -14,22 +14,23 @@
 
 <body>
     <header>
-        <a href="./zero_state.html">
-            <img src="./images/back.png" alt="" href="./zero_state.html">
+        <a href="./index.html">
+            <img src="./images/back.png" alt="" href="./index.html">
             <p>terug</p>
         </a>
         <h1>Registreren</h1>
     </header>
     <main>
-        <form>
-
+        <form method="post" action="/registreren">
+            <label for="fname">voornaam</label>
+            <input type="text" name="fname" id="fname" placeholder="voornaam">
+            <label for="lname">achternaam</label>
+            <input type="text" name="lname" id="lname" placeholder="achternaam">
             <label for="email">email</label>
             <input type="email" name="email" id="email" placeholder="email">
             <label for="password">wachtwoord</label>
             <input type="password" name="password" id="password" placeholder="wachtwoord">
-            <label for="confirm">bevestig je wachtwoord</label>
-            <input type="password" name="confirm" id="confirm" placeholder="bevestig wachtwoord">
-            <input type="submit" value="registreren" href="./profiel.html">
+            <input type="submit" value="registreren">
 
         </form>
     </main>
