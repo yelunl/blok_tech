@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <script href="./scripts/script.js"></script>
     <title>registreren</title>
+    <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://use.typekit.net/lsm3ztk.css">
-    <link rel="stylesheet" href="https://use.typekit.net/lsm3ztk.css">
+    <script src="./scripts/script.js" defer></script>
 </head>
 
 <body>
@@ -29,7 +28,9 @@
             <label for="email">email</label>
             <input type="email" name="email" id="email" placeholder="email">
             <label for="password">wachtwoord</label>
-            <input type="password" name="password" id="password" placeholder="wachtwoord">
+            <input type="password" name="password" id="password" minlength="8" placeholder="wachtwoord">
+            <input type="hidden" name="longitude" id="longitude">
+            <input type="hidden" name="latitude" id="latitude">
             <input type="submit" value="registreren">
 
         </form>

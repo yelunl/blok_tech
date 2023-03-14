@@ -98,7 +98,7 @@ input:focus {
     border-bottom-width: 0.2em;
 }
 
-input::placeholder {}
+/* input::placeholder {} */
 
 input:focus::placeholder {
     color: transparent;
@@ -116,7 +116,8 @@ input:focus::placeholder {
 }
 
 .zero_state a,
-form input:last-of-type {
+form input:last-of-type,
+.bevestiging a {
     display: block;
     text-decoration: none;
     /* border: black solid; */
@@ -136,7 +137,7 @@ form input:last-of-type {
     color: rgb(255, 173, 42);
 }
 
-/* slider */
-/* search */
-/* menu */
-/* formulier */
+.bevestiging {
+    display: flex;
+    flex-direction: column;
+}
