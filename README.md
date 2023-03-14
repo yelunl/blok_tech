@@ -9,12 +9,15 @@ vereiste is dat je de volgende al hebt geïnstalleerd:
 * git
 
 1. Clone de repository
+
 `git clone https://github.com/yelunl/blok_tech.git`
 
 2. installeer alle benodigde node modules
+
 `npm install`
 
 3. start de applicatie
+
 `npm start`
 
 
