@@ -1,9 +1,5 @@
-const locationInput = document.querySelector('input[name="locatie"]');
 const longitudeInput = document.querySelector('#longitude');
 const latitudeInput = document.querySelector('#latitude');
-const registrerenButton = document.querySelector('.zero_state a:nth-of-type(1)');
-let longitude = '';
-let latitude = '';
 
 
 const succes = (position) => {
@@ -20,10 +16,7 @@ const getCoordinates = () => {
 }
 
 const url = new URL(window.location.href);
-console.log(url.pathname);
 
 if (url.pathname === '/registreren.html') {
-    console.log('registreren');
     getCoordinates();
 }
-

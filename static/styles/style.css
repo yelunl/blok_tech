@@ -1,4 +1,5 @@
 html {
+    --color-orange: rgb(255, 173, 42);
     font-family: "nimbus-sans", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -15,7 +16,6 @@ body {
 }
 
 main a {
-    /* text-decoration: none; */
     font-family: "allumi-std", sans-serif;
     font-weight: 200;
     font-style: normal;
@@ -26,22 +26,17 @@ main a {
 }
 
 header {
-    /* display: flex;
-    justify-content: center; */
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     margin-bottom: 3em;
 }
 
 header a {
-    /* display: flex; */
-    /* position: absolute;
-    left: 0; */
     align-self: center;
+    text-decoration: none;
 }
 
 header h1 {
-    /* grid-column: 2 / 4; */
     text-align: center;
 }
 
@@ -53,13 +48,6 @@ header p {
     margin: 0;
     font-size: 0.9em;
 }
-
-/* main {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-} */
 
 form {
     display: flex;
@@ -74,15 +62,12 @@ label {
 }
 
 input {
-    /* background-color: rgb(242, 242, 242); */
     height: 3em;
-    /* border: none; */
     border: rgba(107, 107, 107, 0.322) solid;
     border-radius: 5px;
     box-shadow: none;
     padding-left: 1em;
     outline: none;
-    /* font-size: 1em; */
     font-family: "allumi-std", sans-serif;
     font-weight: 200;
     font-style: normal;
@@ -98,13 +83,11 @@ input:focus {
     border-bottom-width: 0.2em;
 }
 
-/* input::placeholder {} */
-
 input:focus::placeholder {
     color: transparent;
 }
 
-/* zero state */
+/* index.html */
 
 .zero_state {
     display: flex;
@@ -120,8 +103,7 @@ form input:last-of-type,
 .bevestiging a {
     display: block;
     text-decoration: none;
-    /* border: black solid; */
-    background-color: rgb(255, 173, 42);
+    background-color: var(--color-orange);
     text-align: center;
     width: 100%;
     padding: 1em 0;
@@ -131,13 +113,15 @@ form input:last-of-type,
 }
 
 .zero_state a:nth-of-type(2) {
-    /* border: rgb(255, 173, 42) solid; */
     background-color: transparent;
-    border: rgb(255, 173, 42) solid;
-    color: rgb(255, 173, 42);
+    border: var(--color-orange) solid;
+    color: var(--color-orange);
 }
+
+/* bevestiging.ejs */
 
 .bevestiging {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
