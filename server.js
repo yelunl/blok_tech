@@ -10,16 +10,17 @@ const port = 5500;
 app.use(express.static('./static'));
 app.use(express.urlencoded({ extended: true }))
 
+// set templating engine
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
+// connect to database
 const uri = "mongodb+srv://" + process.env.DB_USERNAME + ":" + process.env.DB_PASS + "@" + process.env.DB_HOST + "/?retryWrites=true&w=majority";
-
 const client = new MongoClient(uri);
 client.connect();
-
 const coll = client.db(process.env.DB_NAME).collection("users");
 
+// routes
 app.post('/registreren', async (req, res) => {
   let city;
   // API Request
@@ -36,7 +37,7 @@ app.post('/registreren', async (req, res) => {
 
   // database connectie
   try {
-    coll.insertOne({
+    await coll.insertOne({
       firstName: req.body.fname,
       lastName: req.body.lname,
       email: req.body.email,
@@ -54,7 +55,6 @@ app.post('/registreren', async (req, res) => {
 })
 
 app.post('/complete', async (req, res) => {
-
   // database connectie
   try {
     const cursor = await coll.find({}, { "_id": 1 }).sort({ _id: -1 }).limit(1).toArray();
