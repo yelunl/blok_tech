@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>profiel aanmaken</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="https://use.typekit.net/lsm3ztk.css">
     <link rel="stylesheet" href="https://use.typekit.net/lsm3ztk.css">
     <script src="./scripts/script.js" defer></script>
 </head>
@@ -23,11 +22,11 @@
     <main>
         <h1>hallo <%= naam %>! </h1>
         <p>laten we jouw profiel aanmaken</p>
-        <form>
+        <form method="post" action="/complete">
             <label for="eigenschappen">wat zijn jouw slechte eigenschappen?</label>
             <input type="text" name="eigenschappen" id="eigenschappen">
             <label for="locatie">wat is jouw locatie?</label>
-            <input type="text" name="locatie" id="locatie">
+            <input type="text" name="locatie" id="locatie" value=<%=city %>>
             <input type="submit" value="creeër account">
         </form>
     </main>
