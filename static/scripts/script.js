@@ -1,30 +1,14 @@
-require('dotenv').config();
-console.log(process.env);
-
 const locationInput = document.querySelector('input[name="locatie"]');
+const longitudeInput = document.querySelector('#longitude');
+const latitudeInput = document.querySelector('#latitude');
+const registrerenButton = document.querySelector('.zero_state a:nth-of-type(1)');
 let longitude = '';
 let latitude = '';
-const apiKey = API_KEY;
 
-const getLocation = async () => {
-    try {
-        const response = await fetch(`https://eu1.locationiq.com/v1/reverse?key=${apiKey}&lat=${latitude}&lon=${longitude}&format=json`);
-
-        if (response.ok) {
-            jsonResponse = await response.json();
-            console.log(jsonResponse.address.city);
-            locationInput.value = jsonResponse.address.city;
-        }
-        // throw new Error('request failed');
-    } catch (err) {
-        console.log(err);
-    }
-}
 
 const succes = (position) => {
-    longitude = position.coords.longitude;
-    latitude = position.coords.latitude;
-    getLocation();
+    longitudeInput.value = position.coords.longitude;
+    latitudeInput.value = position.coords.latitude;
 }
 
 const error = (err) => {
@@ -35,5 +19,11 @@ const getCoordinates = () => {
     navigator.geolocation.getCurrentPosition(succes, error);
 }
 
-locationInput.addEventListener('click', getCoordinates);
+const url = new URL(window.location.href);
+console.log(url.pathname);
+
+if (url.pathname === '/registreren.html') {
+    console.log('registreren');
+    getCoordinates();
+}
 
