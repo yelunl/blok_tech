@@ -1,6 +1,6 @@
 # blok tech matching app
 
-Dit is een matching applicatie voor project tech voor de opleiding communicatie en multimedia design aan de hogeschool van Amsterdam. In deze repository staat de code van een feature van de matching app. Dit is voor alleen de feature inloggen en registreren.
+Dit is een matching applicatie voor project tech voor de opleiding communicatie en multimedia design aan de hogeschool van Amsterdam. In deze repository staat de code van een feature van de matching app waarbij mensen worden gematcht op basis van slechte eigenschappen. Dit is alleen voor de feature inloggen en registreren.
 
 ## Hoe download ik deze project?
 vereiste is dat je de volgende al hebt geïnstalleerd:
