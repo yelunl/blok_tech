@@ -24,9 +24,9 @@
         <p>laten we jouw profiel aanmaken</p>
         <form method="post" action="/complete">
             <label for="eigenschappen">wat zijn jouw slechte eigenschappen?</label>
-            <input type="text" name="eigenschappen" id="eigenschappen">
+            <input type="text" name="eigenschappen" id="eigenschappen" required>
             <label for="locatie">wat is jouw locatie?</label>
-            <input type="text" name="locatie" id="locatie" value=<%=city %>>
+            <input type="text" name="locatie" id="locatie" required value=<%=city %>>
             <input type="submit" value="creeër account">
         </form>
     </main>
