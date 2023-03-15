@@ -18,9 +18,6 @@ window.addEventListener('click', (event) => {
 
 });
 
-
-
-
 const longitudeInput = document.querySelector('#longitude');
 const latitudeInput = document.querySelector('#latitude');
 
