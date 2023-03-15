@@ -84,6 +84,10 @@ app.post('/inloggen', async (req, res) => {
   }
 });
 
+app.use((req, res) => {
+  res.status(404).send('<h1>Oeps! Kan pagina niet vinden</h1>');
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 });
