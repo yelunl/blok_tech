@@ -126,7 +126,7 @@ section:nth-of-type(2) a {
 }
 
 
-.zero_state {
+main>div:last-child {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,7 +135,7 @@ section:nth-of-type(2) a {
     height: 100%;
 }
 
-.zero_state a,
+main>div:last-child a,
 form input:last-of-type,
 .bevestiging a {
     display: block;
@@ -149,7 +149,7 @@ form input:last-of-type,
     font-weight: bold;
 }
 
-.zero_state a:nth-of-type(2) {
+main>div:last-child a:nth-of-type(2) {
     background-color: transparent;
     border: var(--color-orange) solid;
     color: var(--color-orange);
