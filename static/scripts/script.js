@@ -1,5 +1,3 @@
-
-
 const longitudeInput = document.querySelector('#longitude');
 const latitudeInput = document.querySelector('#latitude');
 
