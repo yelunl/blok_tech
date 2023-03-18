@@ -37,21 +37,26 @@ app.post('/registreren', async (req, res) => {
 
   // database connectie
   try {
-    await coll.insertOne({
-      firstName: req.body.fname,
-      lastName: req.body.lname,
-      email: req.body.email,
-      password: req.body.password
-    });
+    const checkEmail = await coll.find({ email: req.body.email }).toArray();
+    if (checkEmail.length === 0) {
+      await coll.insertOne({
+        firstName: req.body.fname,
+        lastName: req.body.lname,
+        email: req.body.email,
+        password: req.body.password
+      });
+      res.render('profiel', {
+        naam: req.body.fname,
+        city: city
+      });
+    } else {
+      // create back to register form with error message in ejs
+      res.render('bevestiging');
+    }
   }
   catch (err) {
     console.log(err);
   }
-
-  res.render('profiel', {
-    naam: req.body.fname,
-    city: city
-  });
 })
 
 app.post('/complete', async (req, res) => {
