@@ -21,8 +21,16 @@ const client = new MongoClient(uri);
 client.connect();
 const coll = client.db(process.env.DB_NAME).collection("users");
 
+app.get('/registreren', (req, res) => {
+  res.redirect('registreren.html');
+});
+
+app.get('/inloggen', (req, res) => {
+  res.redirect('inloggen.html');
+})
+
 // routes
-app.post('/registreren', async (req, res) => {
+app.post('/profiel_aanmaken', async (req, res) => {
   let city;
   // API Request
   try {
@@ -73,12 +81,10 @@ app.post('/complete', async (req, res) => {
   res.render('bevestiging');
 })
 
-app.post('/inloggen', async (req, res) => {
+app.post('/profiel', async (req, res) => {
   // database connectie
   try {
-    const cursor = await coll.find({
-      email: req.body.email
-    }).toArray();
+    const cursor = await coll.find({ email: req.body.email }).toArray();
     if (cursor.length === 1) {
       const DatabasePassword = cursor[0].password;
       const checkPassword = await bcrypt.compare(req.body.password, DatabasePassword);
