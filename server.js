@@ -1,4 +1,5 @@
 const express = require('express');
+const bcrypt = require('bcrypt');
 require('ejs');
 const { MongoClient } = require('mongodb');
 require('dotenv').config();
@@ -43,7 +44,7 @@ app.post('/registreren', async (req, res) => {
         firstName: req.body.fname,
         lastName: req.body.lname,
         email: req.body.email,
-        password: req.body.password
+        password: await bcrypt.hash(req.body.password, 10)
       });
       res.render('profiel', {
         naam: req.body.fname,
@@ -76,11 +77,14 @@ app.post('/inloggen', async (req, res) => {
   // database connectie
   try {
     const cursor = await coll.find({
-      email: req.body.email,
-      password: req.body.password
+      email: req.body.email
     }).toArray();
     if (cursor.length === 1) {
-      return res.render('welkom', { naam: cursor[0].firstName });
+      const DatabasePassword = cursor[0].password;
+      const checkPassword = await bcrypt.compare(req.body.password, DatabasePassword);
+      if (checkPassword) {
+        return res.render('welkom', { naam: cursor[0].firstName });
+      }
     } else {
       return res.redirect('/inloggen.html');
     }
