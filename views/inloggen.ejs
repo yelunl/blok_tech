@@ -21,10 +21,14 @@
     </header>
     <main>
         <form method="post" action="/profiel">
+            <p>
+                <%=errorMessage%>
+            </p>
             <label for="email">Email</label>
-            <input id="email" type="email" name="email" placeholder="email" required>
+            <input id="email" type="email" name="email" placeholder="email" required value=<%=email %>>
             <label for="password">Wachtwoord</label>
-            <input id="password" type="password" name="password" placeholder="wachtwoord" minlength="8" required>
+            <input id="password" type="password" name="password" placeholder="wachtwoord" minlength="8" required
+                value=<%=password %>>
             <input type="submit" value="inloggen">
             <a href="#">wachtwoord vergeten</a>
         </form>

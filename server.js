@@ -22,12 +22,22 @@ client.connect();
 const coll = client.db(process.env.DB_NAME).collection("users");
 
 app.get('/registreren', (req, res) => {
-  res.redirect('registreren.html');
+  res.render('registreren', {
+    fname: '',
+    lname: '',
+    email: '',
+    password: '',
+    errorMessage: ''
+  });
 });
 
 app.get('/inloggen', (req, res) => {
-  res.redirect('inloggen.html');
-})
+  res.render('inloggen', {
+    email: '',
+    password: '',
+    errorMessage: ''
+  });
+});
 
 // routes
 app.post('/profiel_aanmaken', async (req, res) => {
@@ -60,7 +70,13 @@ app.post('/profiel_aanmaken', async (req, res) => {
       });
     } else {
       // create back to register form with error message in ejs
-      res.render('bevestiging');
+      res.render('registreren', {
+        fname: req.body.fname,
+        lname: req.body.lname,
+        email: req.body.email,
+        password: req.body.password,
+        errorMessage: "deze gebruiker bestaat al"
+      });
     }
   }
   catch (err) {
@@ -92,7 +108,11 @@ app.post('/profiel', async (req, res) => {
         return res.render('welkom', { naam: cursor[0].firstName });
       }
     } else {
-      return res.redirect('/inloggen.html');
+      return res.render('inloggen', {
+        email: req.body.email,
+        password: req.body.password,
+        errorMessage: "combinatie email en wachtwoord onjuist"
+      });
     }
   } catch (err) {
     console.log(err);
@@ -106,3 +126,5 @@ app.use((req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 });
+
+//redirect 

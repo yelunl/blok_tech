@@ -55,6 +55,12 @@ form {
     width: 100%;
 }
 
+form p {
+    color: red;
+    margin-bottom: 0;
+    font-size: 0.8em;
+}
+
 label {
     margin-top: 1.3em;
     margin-bottom: 0.3em;
